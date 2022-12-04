@@ -23,39 +23,28 @@ public class Pair<T, S>
         return second;
     }
 }
+Filename: “PairUtil.java”
 Filename: “MinMaxTester.java”
-//define new class MinMaxTester
+//define the class MinMaxTester
 public class MinMaxTester
 {
-    //define main method
+    //define the main method
     public static void main(String[] args)
     {
-//define a object array accounts
-        SavingsAccount[] accounts =
+//define the string array words
+        String[] words =
                 {
-//add values to array
-                        new SavingsAccount(10),
-                        new SavingsAccount(10),
-                        new SavingsAccount(5),
+                        "Mary", "had", "a", "little", "lamb"
                 };
-//call the method deposit to add elements to account
-        accounts[0].deposit(1000);
-        accounts[1].deposit(10000);
-        accounts[2].deposit(10000);
-//iterate a for loop
-        for (SavingsAccount a : accounts)
-//call addInterest on a
-            a.addInterest();
-//define a pair mm
-        Pair<SavingsAccount, SavingsAccount> mm
-                = PairUtil.minmax(accounts);
+//define a pair
+        Pair<String, String> mm = PairUtil.minmax(words);
 //get the first element of the pair
-        System.out.println(mm.getFirst().getBalance());
+        System.out.println(mm.getFirst());
 //print the expected result
-        System.out.println("Expected: 1100");
+        System.out.println("Expected: Mary");
 //print the second element of the pair
-        System.out.println(mm.getSecond().getBalance());
+        System.out.println(mm.getSecond());
 //print the expected result
-        System.out.println("Expected: 11000");
+        System.out.println("Expected: little");
     }
 }
